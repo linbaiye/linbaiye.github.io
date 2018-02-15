@@ -3,5 +3,8 @@
    <feature url="features/yobaits_feature_0.1.0.201802032203.jar" id="yobaits_feature" version="0.1.0.201802032203">
       <category name="Yobatis"/>
    </feature>
+   <feature url="features/yobaits_feature_0.2.0.201802151350.jar" id="yobaits_feature" version="0.2.0.201802151350">
+      <category name="Yobatis"/>
+   </feature>
    <category-def name="Yobatis" label="Yobatis"/>
 </site>
