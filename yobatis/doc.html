@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <script
+                  src="https://code.jquery.com/jquery-3.3.1.min.js"
+                  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                  crossorigin="anonymous"></script>
+    <style>
+.container.title, .section.container.subtitle {
+  color : #fff;
+}
+            .seciont.fixed {
+              position: fixed;
+            }
+            .hero.fixed {
+              display: none;
+            }
+            .menu-list li .submenu-list {
+              display: none;
+            }
+            .menu-list li.is-open .submenu-list {
+              display: inherit;
+            }
+            #side-bar.fixed  {
+              position: fixed;
+            }
+            #doc-content.fixed {
+              position: absolute;
+              right: 0;
+            }
+            #document.fixed {
+              padding-top: 0;
+            }
+    </style>
+  </head>
+  <body>
+    <section class="section" id="document">
+      <div class="container">
+        <div class="columns">
+          <div id="side-bar" class="column fixed is-one-quarter">
+            <aside class="menu">
+              <p class="menu-label">
+                Documentation
+              </p>
+              <ul class="menu-list">
+                <li class="is-open"> <a class="submenu-switch is-active">SELECT</a>
+                  <ul class="submenu-list">
+                    <li><a class="is-active" href="#select_one_by_pk">根据主键查询一条记录</a></li>
+                    <li><a href="#select_one_by_criteria">根据条件查询一条记录</a></li>
+                    <li><a href="#select_by_criteria">根据条件查询多条记录</a></li>
+                    <li><a href="#count_by_criteria">获取符合条件的记录数量</a></li>
+                    <li><a href="#count_all">获取所有记录数量</a></li>
+                  </ul>
+                </li>
+                <li> <a class="submenu-switch">INSERT</a>
+                  <ul class="submenu-list">
+                    <li class="submenu-item">
+                      <a href="#insert_all">INSERT所有字段</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a href="#insert_all_ignore">INSERT IGNORE所有字段</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a href="#insert">INSERT所有非NULL字段</a>
+                    </li>
+                  </ul>
+                </li>
+                <li> <a class="submenu-switch">UPDATE</a>
+                  <ul class="submenu-list">
+                    <li><a href="#update_all_by_key">根据主键更新所有字段</a></li>
+                    <li><a href="#update_all_by_criteria">根据条件更新所有字段</a></li>
+                    <li><a href="#update_by_key">根据主键更新所有非空字段</a></li>
+                    <li><a href="#update_by_criteria">根据条件更新所有非空字段</a></li>
+                  </ul>
+                </li>
+                <li> <a  class="submenu-switch">DELETE</a>
+                  <ul class="submenu-list">
+                    <li><a href="#delete_by_criteria">根据主键删除</a></li>
+                    <li><a href="#delete_by_key">根据条件删除</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </aside> 
+          </div>
+          <div id="doc-content" class="column fixed is-three-quarters">
+            <article id="select_one_by_pk" class="message is-link">
+              <div class="message-header">
+                <p>T selectOne(PK pk);</p>
+              </div>
+              <div class="message-body">
+                根据主键查询记录。 <br />
+                返回与表对应的对象如果主键存在，否则NULL。
+              </div>
+            </article>
+            <article id="select_one_by_criteria" class="message is-link">
+              <div class="message-header">
+                <p>T selectOne(BaseCriteria criteria);</p>
+              </div>
+              <div class="message-body">
+                根据条件查询一条记录。构建criteria时，调用setForUpdate(true)方法可以加入for update子句。<br />
+                返回对应的对象如果存在，否则NULL；如果有多条记录满足查询条件，则抛出异常。
+              </div>
+            </article>
+            <article id="select_by_criteria" class="message is-link">
+              <div class="message-header">
+                <p>List<T> selectList(BaseCriteria criteria);</p>
+              </div>
+              <div class="message-body">
+                查询满足条件criteria的记录。构建criteria时，调用setForUpdate(true)方法加入for update子句, setLimit()方法加入limit, setOffset()方法加入offset。 <br />
+                返回对应的对象如果存在，否则空List。
+              </div>
+            </article>
+            <article id="count_by_criteria" class="message is-link">
+              <div class="message-header">
+                <p>long count(BaseCriteria criteria);</p>
+              </div>
+              <div class="message-body">
+                统计满足条件criteria的记录数量。 <br />
+                返回记录数量。
+              </div>
+            </article>
+            <article id="count_all" class="message is-link">
+              <div class="message-header">
+                <p>long countAll();</p>
+              </div>
+              <div class="message-body">
+                统计表中所有记录数量。 <br />
+                返回记录数量。
+              </div>
+            </article>
+            <article id="insert_all" class="message is-link">
+              <div class="message-header">
+                <p>int insertAll(B record);</p>
+              </div>
+              <div class="message-body">
+                插入record中的所有字段。 <br />
+                插入成功返回1；失败则抛出相关异常。
+              </div>
+            </article>
+            <article id="insert_all_ignore" class="message is-link">
+              <div class="message-header">
+                <p>int insertAllIgnore(B record);</p>
+              </div>
+              <div class="message-body">
+                插入record中的所有字段，该方法不会抛出异常如果插入失败。<br />
+                插入成功返回1；失败则返回0。
+              </div>
+            </article>
+            <article id="insert" class="message is-link">
+              <div class="message-header">
+                <p>int insert(B record);</p>
+              </div>
+              <div class="message-body">
+                插入record中的所有非NULL字段；若表为自增主键且record中的主键为NULL，则会在插入后将新生成的主键设置到record中对应的字段。<br />
+                插入成功返回1；失败则抛出相关异常。
+              </div>
+            </article>
+            <article id="update_by_key" class="message is-link">
+              <div class="message-header">
+                <p>int update(B record);</p>
+              </div>
+              <div class="message-body">
+                基于主键更新record中的所有非NULL字段。<br />
+                更新成功返回1；如果没有对应记录则返回0。
+              </div>
+            </article>
+            <article id="update_all_by_key" class="message is-link">
+              <div class="message-header">
+                <p>int updateAll(B record);</p>
+              </div>
+              <div class="message-body">
+                基于主键更新record中的所有字段。<br />
+                更新成功返回1；如果没有对应记录则返回0。
+              </div>
+            </article>
+            <article id="update_by_criteria" class="message is-link">
+              <div class="message-header">
+                <p>int update(B record, BaseCriteria criteria);</p>
+              </div>
+              <div class="message-body">
+                根据查询条件criteria更新对应记录，只更新record中非NULL字段。<br />
+                返回被影响的记录数。
+              </div>
+            </article>
+            <article id="update_all_by_criteria" class="message is-link">
+              <div class="message-header">
+                <p>int updateAll(B record, BaseCriteria criteria);</p>
+              </div>
+              <div class="message-body">
+                根据查询条件criteria更新对应记录，更新record中所有字段。<br />
+                返回被影响的记录数。
+              </div>
+            </article>
+            <article id="delete_by_key" class="message is-link">
+              <div class="message-header">
+                <p>int delete(PK pk);</p>
+              </div>
+              <div class="message-body">
+                删除主键pk对应的记录。<br />
+                返回1如果存在对应的记录，否则0。
+              </div>
+            </article>
+            <article id="delete_by_criteria" class="message is-link">
+              <div class="message-header">
+                <p>int delete(BaseCriteria criteria);</p>
+              </div>
+              <div class="message-body">
+                删除查询条件criteria对应的记录。<br />
+                返回被删除的记录数。
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+  $( document ).ready(function() {
+   $(function() {
+      function doScroll(top) {
+          var y = $(window).scrollTop();
+        if (y > top) {
+        $("#side-bar").addClass("fixed");
+        $("#doc-content").addClass("fixed");
+        $("#document").addClass("fixed");
+        $(".hero").addClass("fixed");
+      } else {
+        $("#side-bar").removeClass("fixed");
+        $("#doc-content").removeClass("fixed");
+        $("#document").removeClass("fixed");
+        $(".hero").removeClass("fixed");
+      } 
+      }
+
+        var sidebar = $('#side-bar');
+        var top = sidebar.offset().top;
+      $(window).scroll(function() {
+        //doScroll(top);
+      });
+          $(".submenu-switch").click(function() {
+      $(this).parent("li").toggleClass("is-open");
+      $(this).toggleClass("is-active");
+    });
+    $(".submenu-list a").click(function() {
+      $(".submenu-list a").removeClass("is-active");
+      $(this).addClass("is-active");
+      var top = $($(this).attr("data-href")).offset().top;
+      $(window).scrollTop(top);
+      //doScroll(top);
+      //$(window).scrollTop(top);
+      //doScroll(top);
+      //$(window).scrollTop($($(this).attr("data-href")).offset().top);
+    });
+     
+    });
+
+    });
+
+  </script>
+</html>
