@@ -6,5 +6,8 @@
    <feature url="features/yobatis_0.2.4.201802261246.jar" id="yobatis" version="0.2.4.201802261246">
       <category name="Yobatis"/>
    </feature>
+   <feature url="features/yobatis_0.2.5.201806291450.jar" id="yobatis" version="0.2.5.201806291450">
+      <category name="Yobatis"/>
+   </feature>
    <category-def name="Yobatis" label="Yobatis"/>
 </site>
