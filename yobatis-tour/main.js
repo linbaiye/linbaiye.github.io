@@ -174,7 +174,7 @@ module.exports = "img {\n  max-width: 60%;\n  max-height: 450px;\n}\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>\n  代码速览\n</h1>\n<mat-divider></mat-divider>\n<div>\n  <p>在Yobatis Tool Window中单击Generate以后，Yobatis会为表yobatis生成如下文件</p>\n  <img src=\"assets/img/code_arch.jpg\" />\n</div>\n<div>\n  <h3>YobatisDao.java</h3>\n  <mat-divider></mat-divider>\n  <p>常用的CURD signature，生成后Yobatis不会覆写，可在该文件中添加自定义方法。具体使用请访问\"使用Yobatis\":</p>\n  <img src=\"assets/img/dao.jpg\" />\n</div>\n<div>\n  <h3>BaseYobatis.java</h3>\n  <mat-divider></mat-divider>\n  <p>根据表生成的实体类，包含表中所有字段，Yobatis每次Generate会覆盖该文件，请勿修改。</p>\n  <img src=\"assets/img/base_entity.jpg\" />\n</div>\n<div>\n  <h3>Yobatis.java</h3>\n  <mat-divider></mat-divider>\n  <p>配合BaseYobatis使用，可在该类中添加自定义field, method，生成后Yobatis不会覆写该文件。</p>\n  <img src=\"assets/img/entity.jpg\" />\n</div>\n<div>\n  <h3>YobatisMapper.xml</h3>\n  <mat-divider></mat-divider>\n  <p>Mybatis mapper文件，可在该文件中添加tag，Yobatis每次都会覆写自动生成的tag，保留自定义tag。</p>\n  <img src=\"assets/img/xml.jpg\" />\n</div>\n<h3>请git clone 查看完整示例项目。</h3>\n"
+module.exports = "<h1>\n  代码速览\n</h1>\n<mat-divider></mat-divider>\n<div>\n  <p>在Yobatis Tool Window中单击Generate以后，Yobatis会为表employee生成如下文件</p>\n  <img src=\"assets/img/code_arch.jpg\" />\n</div>\n<div>\n  <h3>EmployeeDao.java</h3>\n  <mat-divider></mat-divider>\n  <p>常用的CURD signature，生成后Yobatis不会覆写，可在该文件中添加自定义方法。具体使用请访问\"代码使用\":</p>\n  <img src=\"assets/img/dao.jpg\" />\n</div>\n<div>\n  <h3>BaseEmployee.java</h3>\n  <mat-divider></mat-divider>\n  <p>根据表生成的实体类，包含表中所有字段，表结构发生变更后，重新Generate即可。Yobatis每次Generate会覆盖该文件，请勿修改。</p>\n  <img src=\"assets/img/base_entity.jpg\" />\n</div>\n<div>\n  <h3>Employee.java</h3>\n  <mat-divider></mat-divider>\n  <p>配合BaseYobatis使用，可在该类中添加自定义field, method，生成后Yobatis不会覆写该文件。</p>\n  <img src=\"assets/img/entity.jpg\" />\n</div>\n<div>\n  <h3>EmployeeMapper.xml</h3>\n  <mat-divider></mat-divider>\n  <p>Mybatis mapper文件，可在该文件中添加tag，Yobatis每次都会覆写自动生成的tag，保留自定义tag。</p>\n  <img src=\"assets/img/xml.jpg\" />\n</div>\n<p>\n  <strong>请git clone https://github.com/linbaiye/yobatis-sample.git 查看完整示例项目。</strong>\n</p>\n"
 
 /***/ }),
 
@@ -237,7 +237,7 @@ module.exports = "img {\n  max-width: 60%;\n  max-height: 450px;\n}\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>\n  配置\n</h1>\n<mat-divider></mat-divider>\n<div>\n  <p>使用Yobatis之前需要配置mysql数据库，以及代码生成位置，首先打开配置面板:</p>\n  <img src=\"assets/img/activation.jpg\" />\n  <p>然后填入mysql url, 用户名，密码并点击refresh即可看到数据库中表：</p>\n  <img src=\"assets/img/refresh.jpg\" />\n  <p>最后填入代码生成位置以及生成, java文件的package名字, xml mapper的位置:</p>\n  <img src=\"assets/img/generate.jpg\" />\n  <p>单击Generate即可生成对应的DAO/Entity/Xml Mapper代码, 完整示例请git clone </p>\n</div>\n\n"
+module.exports = "<h1>\n  配置\n</h1>\n<mat-divider></mat-divider>\n<div>\n  <p>使用Yobatis之前需要配置mysql数据库，单击Yobatis图标（第1步）弹出窗口，单击Config显示配置（第2步），单击Refresh显示当前库中的表（第三步）：</p>\n  <img src=\"assets/img/activation.jpg\" />\n  <p>填入代码生成位置以及生成, java文件的package名字, xml mapper的位置，单击Generate（第4步）即可生成对应的DAO/Entity/Xml Mapper代码：</p>\n  <img src=\"assets/img/generate.jpg\" />\n  <p>生成前后对比（完整示例请git clone https://github.com/linbaiye/yobatis-sample.git）</p>\n  <img src=\"assets/img/before_generation.jpg\" /> <label>----->>></label>\n  <img src=\"assets/img/after_generation.jpg\" />\n</div>\n\n"
 
 /***/ }),
 
@@ -300,7 +300,7 @@ module.exports = "img {\n  max-width: 60%;\n  max-height: 450px;\n}\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>\n  安装\n</h1>\n<mat-divider></mat-divider>\n<div>\n  <p>\n    Yobatis目前只支持从本地安装，请到https://github.com/linbaiye/yobatis下载最新release后通过本地安装方式安装插件。下载后找到IDEA的Preference/Settings目录，选择Plugins，通过Install Plugin From Disk安装:\n  </p>\n  <img src=\"assets/img/settings.jpg\" />\n  <img src=\"assets/img/from_disk.jpg\" />\n  <p>\n    安装完成并重启后会在右侧显示Yobatis ToolWindow的按钮。如下图:\n  </p>\n  <img src=\"assets/img/after_installation.jpg\" />\n  <p>\n    若没有该ToolWindow的按钮，请检查View -> Tool Windows，如下图:\n  </p>\n  <img src=\"assets/img/tool_window_position.jpg\" />\n</div>\n"
+module.exports = "<h1>\n  安装\n</h1>\n<mat-divider></mat-divider>\n<div>\n  <p>\n    Yobatis目前只支持从本地安装，请到https://github.com/linbaiye/yobatis下载最新release。下载后找到IDEA的Preference/Settings目录，选择Plugins，通过Install Plugin From Disk安装，选择zip包即可，不需要解压:\n  </p>\n  <img src=\"assets/img/settings.jpg\" />\n  <img src=\"assets/img/from_disk.jpg\" />\n  <p>\n    安装完成并重启后会在右侧显示Yobatis ToolWindow的按钮。如下图:\n  </p>\n  <img src=\"assets/img/after_installation.jpg\" />\n  <p>\n    若没有该ToolWindow的按钮，请检查View -> Tool Windows，如下图:\n  </p>\n  <img src=\"assets/img/tool_window_position.jpg\" />\n</div>\n"
 
 /***/ }),
 
@@ -454,7 +454,7 @@ module.exports = "mat-sidenav {\n  width: 300px;\n}\n\nmat-list-item {\n  paddin
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-nav-list dense>\n  <a routerLinkActive=\"active-list-item\" mat-list-item routerLink=\"/install\">\n    安装Yobatis\n  </a>\n  <mat-divider></mat-divider>\n  <a routerLinkActive=\"active-list-item\" mat-list-item routerLink=\"/config\">\n    配置Yobatis\n  </a>\n  <mat-divider></mat-divider>\n  <a routerLinkActive=\"active-list-item\" mat-list-item routerLink=\"/code-intro\">\n    生成代码速览\n  </a>\n  <mat-divider></mat-divider>\n  <a routerLinkActive=\"active-list-item\" mat-list-item  routerLink=\"/usage\">\n    生成代码使用\n  </a>\n</mat-nav-list>\n"
+module.exports = "<mat-nav-list dense>\n  <a routerLinkActive=\"active-list-item\" mat-list-item routerLink=\"/install\">\n    安装Yobatis\n  </a>\n  <mat-divider></mat-divider>\n  <a routerLinkActive=\"active-list-item\" mat-list-item routerLink=\"/config\">\n    配置Yobatis\n  </a>\n  <mat-divider></mat-divider>\n  <a routerLinkActive=\"active-list-item\" mat-list-item routerLink=\"/code-intro\">\n    代码速览\n  </a>\n  <mat-divider></mat-divider>\n  <a routerLinkActive=\"active-list-item\" mat-list-item  routerLink=\"/usage\">\n    代码使用\n  </a>\n</mat-nav-list>\n"
 
 /***/ }),
 
